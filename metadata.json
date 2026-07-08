@@ -1,0 +1,6 @@
+{
+  "name": "CalcHub - Premium Online Calculator Directory",
+  "description": "500+ free online calculators spanning Finance, Health, Math, Education, Conversion, and Everyday Utilities. Quick, precise, and interactive with step-by-step guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

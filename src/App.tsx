@@ -52,6 +52,81 @@ export default function App() {
     }
   }, [darkMode]);
 
+  // Dynamic page & full website SEO
+  useEffect(() => {
+    let title = "WeightGain AI | Personal AI Nutrition & Muscle Coach";
+    let desc = "Build high-quality muscle mass and gain healthy weight with WeightGain AI. Access custom calorie-surplus meal plans, precise BMR/TDEE calculators, strength workout routines, and real-time tracking.";
+
+    switch (activeTab) {
+      case 'home':
+        title = "WeightGain AI | Your Personal AI Nutrition & Muscle Building Coach";
+        desc = "Calculate BMR & TDEE, customize healthy weight-gain diet plans, track macros, and build high-quality muscle mass with WeightGain AI.";
+        break;
+      case 'ai_tools':
+        title = "AI Personal Coach & Custom Calculators | WeightGain AI";
+        desc = "Leverage advanced fitness intelligence. Query your AI Nutrition Coach and compute highly accurate caloric surpluses, BMR, TDEE, and macronutrients.";
+        break;
+      case 'meal_plans':
+        title = "Custom Weight Gain Meal Plans & Calorie Surplus | WeightGain AI";
+        desc = "Explore custom calorie-surplus meal structures calibrated for clean bulk, vegan diets, and vegetarian-friendly muscle building protocols.";
+        break;
+      case 'foods':
+        title = "Calorie Dense Fitness Foods Database | WeightGain AI";
+        desc = "Search and discover high-protein, calorie-dense bulking foods to hit your muscle-building macros efficiently.";
+        break;
+      case 'workout':
+        title = "Hypertrophy & Strength Workout Routines | WeightGain AI";
+        desc = "Maximize progressive overload with specialized workout divisions—Push-Pull-Legs, Upper-Lower, and high-protein bulking strategies.";
+        break;
+      case 'blog':
+        title = "Weight Gain & Muscle Science Articles | WeightGain AI";
+        desc = "Read evidence-based articles about hyper-caloric nutrition, hardgainer strategies, progressive resistance, and health.";
+        break;
+      case 'progress':
+        title = "Interactive Weight & Progress Tracker | WeightGain AI";
+        desc = "Visualize weight predictions, log weekly progress, and keep yourself highly accountable on your muscle building journey.";
+        break;
+      default:
+        break;
+    }
+
+    // Set Document Title
+    document.title = title;
+
+    // Set Meta Description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', desc);
+
+    // Set OpenGraph Title
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', title);
+    }
+
+    // Set OpenGraph Description
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute('content', desc);
+    }
+
+    // Set Twitter Title
+    let twTitle = document.querySelector('meta[property="twitter:title"]');
+    if (twTitle) {
+      twTitle.setAttribute('content', title);
+    }
+
+    // Set Twitter Description
+    let twDesc = document.querySelector('meta[property="twitter:description"]');
+    if (twDesc) {
+      twDesc.setAttribute('content', desc);
+    }
+  }, [activeTab]);
+
   const updateProfile = (updates: any) => {
     const newProfile = { ...profile, ...updates };
     setProfile(newProfile);

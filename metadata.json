@@ -1,6 +1,6 @@
 {
-  "name": "CalcHub - Premium Online Calculator Directory",
-  "description": "500+ free online calculators spanning Finance, Health, Math, Education, Conversion, and Everyday Utilities. Quick, precise, and interactive with step-by-step guides.",
+  "name": "WeightGain AI",
+  "description": "Your Personal AI Nutrition Coach. Build muscle faster with AI-powered meal plans, workout routines, calorie analysis, and progress tracking.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

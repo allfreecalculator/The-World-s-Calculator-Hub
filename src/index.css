@@ -7,9 +7,11 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* User Specified Palette */
-  --color-mint: #3ebd93;
-  --color-slate-dark: #2d4042;
-  --color-slate-light: #e2e5e5;
+  --color-mint: #3EBD93;
+  --color-slate-dark: #0B1220;
+  --color-slate-light: #F8FAFC;
+  --color-slate-card: #111827;
+  --color-slate-card-light: #FFFFFF;
 }
 
 @layer base {
@@ -17,3 +19,33 @@
     font-family: var(--font-sans);
   }
 }
+
+/* Custom visual animations and helpers */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Typing / streaming indicator blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.8s infinite;
+}
+
